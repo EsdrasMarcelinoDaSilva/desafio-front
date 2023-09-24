@@ -1,10 +1,25 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import TodoList from "./components/todoList/TodoList"
+import ListScreen from "./components/listScreen/ListScreen"
+import { ToastContainer } from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css'
+import Home from "./components/home/Home"
+
+
 function App() {
 
   return (
-    <div>
-      <h1>Olá mundo</h1>
-    </div>
-  )
+      <>
+      <ToastContainer />
+        <Router>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/todolist" element={<TodoList />} />
+            <Route path="/list/:listId" element={<ListScreen />} />
+          </Routes>
+        </Router>
+      </>
+    )
 }
 
 export default App
