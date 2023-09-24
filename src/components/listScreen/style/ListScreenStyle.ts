@@ -5,6 +5,7 @@ export const Case = styled.main`
     width: 100vw;
     display: flex;
     flex-direction: column;
+    gap: 1em;
 `
 export const Frame = styled.div`
     background-color: #cfcfcf;

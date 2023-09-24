@@ -69,7 +69,8 @@ export default function TodoList(){
                 </C.Section>
             </C.CenterBox>
             <C.Div>
-            <TaskList tasks={tasks} onToggleDone={() => {}} />
+                <TaskList tasks={tasks} onToggleDone={() => {}} />
+                {tasks.length > 0 && <C.Button onClick={() => setTasks([])}>Clear</C.Button>}
             </C.Div>
         </C.Box>
     )
