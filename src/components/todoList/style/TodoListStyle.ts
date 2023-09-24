@@ -12,7 +12,6 @@ export const CenterBox = styled.main`
 `
 export const Section = styled.section`
     padding: 0.5em;
-    width: 28em;
     display: flex;
     justify-content: center;
     gap: 2em;
