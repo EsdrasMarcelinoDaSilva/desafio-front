@@ -40,7 +40,7 @@ export default function TodoList(){
             localStorage.setItem(listId, JSON.stringify(tasks))
             navigate(`/list/${listId}`, { state: { tasks, title }})
             copy(listLink)
-            toast.success('The list has been created successfully! Link copied to clipboard')
+            toast.success('The list has been created successfully!')
             console.log('link to the list', listLink)
         }
     }
