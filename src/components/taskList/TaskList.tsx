@@ -1,14 +1,14 @@
 import Task from "../task/Task"
 
 export type TaskProps = { 
-    id: number
+    id: string
     text: string
     done: boolean
 }
 
 type TaskListProps = {
     tasks: TaskProps[]
-    onToggleDone: (id: number) => void
+    onToggleDone: (id: string) => void
 }
 
 export default function TaskList({ tasks, onToggleDone }: TaskListProps){

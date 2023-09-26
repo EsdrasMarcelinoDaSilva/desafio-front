@@ -7,8 +7,6 @@ import copy from "copy-to-clipboard"
 import TaskList, { TaskProps } from "../taskList/TaskList"
 
 
-let idCounter = 1
-
 export default function TodoList(){
     const [title, setTitle] = useState('')
     const [tasks, setTasks] = useState<Array<TaskProps>>([])
@@ -27,7 +25,7 @@ export default function TodoList(){
     }, [tasks])
 
     const addTask = () => {
-        const allTasks = text.split('\n').map(taskText => ({ id: idCounter++, text: taskText, done: false}))
+        const allTasks = text.split('\n').map(taskText => ({ id: uuidv4(), text: taskText, done: false}))
         setTasks(oldTasks => [...oldTasks, ...allTasks ])
         setText('')
     }
@@ -37,9 +35,13 @@ export default function TodoList(){
             toast.warn('Please fill in all fields before creating the list')
         }else{
             const listId = uuidv4()
+            const taskIds = tasks.map(task => task.id)
+            const listLink = `${window.location.origin}/list/${listId}/tasks/${taskIds.join('-')}`
+            localStorage.setItem(listId, JSON.stringify(tasks))
             navigate(`/list/${listId}`, { state: { tasks, title }})
-            copy(window.location.href)
+            copy(listLink)
             toast.success('The list has been created successfully! Link copied to clipboard')
+            console.log('link to the list', listLink)
         }
     }
 

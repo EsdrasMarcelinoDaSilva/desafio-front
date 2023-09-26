@@ -15,7 +15,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/todolist" element={<TodoList />} />
-            <Route path="/list/:listId" element={<ListScreen />} />
+            <Route path="/list/:listId" element={<ListScreen />} /> 
+            <Route path="/list/:listId/tasks/:taskIds" element={<ListScreen />} />
           </Routes>
         </Router>
       </>

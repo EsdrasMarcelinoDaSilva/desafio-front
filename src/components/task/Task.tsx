@@ -1,8 +1,8 @@
 type TaskProps = {
-    id: number
+    id: string
     text: string
     done: boolean
-    onToggleDone: (id : number) => void
+    onToggleDone: (id : string) => void
 }
 
 export default function Task({ id, text, done, onToggleDone }: TaskProps){

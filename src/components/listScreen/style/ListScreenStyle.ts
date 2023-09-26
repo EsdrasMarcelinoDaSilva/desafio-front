@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Case = styled.main`
     height: fit-content;
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 1em;
@@ -19,4 +19,9 @@ export const Paragraph = styled.p`
     color: #0F3F6A;
     font-weight: bold;
     font-size: 1.1em;
+`
+export const Button = styled.button`
+`
+export const Link = styled.a`
+    pointer-events: none;
 `
